@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Basic";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model BasicPersonViewModel
+
+<h2>@ViewData["Title"]</h2>
+<h3>@TempData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<div asp-validation-summary="ModelOnly"></div>
+
+<form asp-action="Basic" class="form form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Id: </label>
+        <div class="col-sm-9">
+            <input asp-for="Id" class="form-control" />
+            <span asp-validation-for="Id"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Name: </label>
+        <div class="col-sm-9">
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Email: </label>
+        <div class="col-sm-9">
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Age: </label>
+        <div class="col-sm-9">
+            <input asp-for="Age" class="form-control" />
+            <span asp-validation-for="Age"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Length of Service: </label>
+        <div class="col-sm-9">
+            <input asp-for="LengthOfService" class="form-control" />
+            <span asp-validation-for="LengthOfService"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Contract Length: </label>
+        <div class="col-sm-9">
+            <input asp-for="ContractLength" class="form-control" />
+            <span asp-validation-for="ContractLength"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">AdditionalField: </label>
+        <div class="col-sm-9">
+            <input asp-for="AdditionalField" type="checkbox" />
+            <span asp-validation-for="AdditionalField"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Nationality: </label>
+        <div class="col-sm-9">
+            <input asp-for="Nationality" class="form-control" />
+            <span asp-validation-for="Nationality"></span>
+        </div>
+    </div>
+    <br />
+    <input type="submit" value="submit" class="btn btn-success" />
+</form>
+
+@section Scripts{
+    <environment include="Development">
+        <script src="~/js/jqueryval.bundle.min.js"></script>
+        <script src="~/js/customvalidator.bundle.min.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/jqueryval.bundle.min.js"></script>
+        <script src="~/js/customvalidator.bundle.min.js"></script>
+    </environment>
+}
